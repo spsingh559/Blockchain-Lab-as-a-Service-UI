@@ -17,6 +17,10 @@ import Login from './components/Login.jsx';
 import LandingPage from './components/LandingPage.jsx';
 import Report from './components/Report/Report.jsx';
 import CreateNetwork from './components/createNetwork/createNetwork';
+import MyProfile from './components/MyProfile/MyProfile';
+import ApplicationAssesmentForm from './components/ApplicationAssesmentForm/ApplicationAssesmentForm';
+import Recommendation from './components/ApplicationAssesmentForm/Recommendation';
+import NetworkTesting from './components/NetworkTesting/NetworkTesting';
 
 
 import {Route, Router, IndexRoute, hashHistory} from 'react-router';
@@ -30,6 +34,12 @@ ReactDOM.render(
 	<Route path="/" component={ParentComponent}>
 	<Route  path="/Report/:instanceID" component={Report}  />
 	<Route  path="/createNetwork" component={CreateNetwork}  />
+	<Route  path="/myProfile" component={MyProfile}  />
+	<Route  path="/assesmentForm" component={ApplicationAssesmentForm}  />
+	<Route  path="/recommendation/:recommendationID" component={Recommendation}  />networkTesting
+	<Route  path="/networkTesting" component={NetworkTesting}  />
+
+
 	{/* <Route path="/Report" component={Report} /> */}
 		<IndexRoute component={Home} />
 		</Route>

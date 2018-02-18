@@ -12,6 +12,7 @@ import FileFolder from 'material-ui/svg-icons/file/folder';
 import List from 'material-ui/List/List';
 import ListItem from 'material-ui/List/ListItem';
 
+
 import {Image} from 'react-bootstrap';
 const style = {
   labelStyle: {
@@ -71,15 +72,15 @@ export default class Nav extends React.Component{
   // newTradeNavigation=()=>{
   //   this.context.router.push('/newTrade');
   // }
-  dashboardNavigation=()=>{
-    this.context.router.push('/timeline');
+  assesmentFormNavigation=()=>{
+    this.context.router.push('/assesmentForm');
   }
   networkNavigation=()=>{
     this.context.router.push('/createNetwork');
   }
-  // confirmTradeNavigation=()=>{
-  //   this.context.router.push('/confirmTrade');
-  // }
+  networkTestingNavigation=()=>{
+    this.context.router.push('/networkTesting');
+  }
   // confirmParcelNavigation=()=>{
   //   this.context.router.push("/confirmParcel");
   // }
@@ -103,9 +104,9 @@ export default class Nav extends React.Component{
              onLeftIconButtonTouchTap={this.handleToggle}
              style={{position: "fixed",top:'0',backgroundColor: '#1f497d'}}
             >
-           <FlatButton style={style.labelStyle1} label="Application Assement Framework" onTouchTap={this.dashboardNavigation} />
+           <FlatButton style={style.labelStyle1} label="Application Assement Framework" onTouchTap={this.assesmentFormNavigation} />
            <FlatButton style={style.labelStyle} label="Create a Netwoork" onTouchTap={this.networkNavigation} />
-           <FlatButton style={style.labelStyle} label="Test a Network" onTouchTap={this.confirmTradeNavigation} />
+           <FlatButton style={style.labelStyle} label="Test a Network" onTouchTap={this.networkTestingNavigation} />
            
            
            <List>
@@ -134,17 +135,21 @@ export default class Nav extends React.Component{
            <Link to="/"> Home </Link>
           </MenuItem>
         	<MenuItem onTouchTap={this.handleClose}>
-          <Link to ="/newTrade">Application Assement Framework</Link>
+          <Link to ="/assesmentForm">Application Assement Framework</Link>
           </MenuItem>
           <MenuItem onTouchTap={this.handleClose}>
-          <Link to ="/tradeRecap">Create a Netwoork</Link>
+          <Link to ="/createNetwork">Create a Netwoork</Link>
           </MenuItem>
           <MenuItem onTouchTap={this.handleClose}>
-          <Link to ="/confirmTrade">Test</Link>
+          <Link to ="/networkTesting">Test Network</Link>
+          </MenuItem>
+          <MenuItem onTouchTap={this.handleClose}>
+          <Link to ="/myProfile">My Profile</Link>
           </MenuItem>
           <MenuItem onTouchTap={this.handleLogout}>
           Logout
           </MenuItem>
+          
         </Drawer>
         </div>
       )

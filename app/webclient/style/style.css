@@ -35,3 +35,37 @@
   z-index: -100;
 color: white  
 }
+
+.profile{
+  background-image: url("../images/profile6.jpg");
+  position: relative;
+  height: 530px;
+ background-repeat:no-repeat;
+ overflow: hidden
+}
+
+.assessment{
+  background-image: url("../images/assessment.jpg");
+  position: relative;
+  height: 900px;
+ background-repeat:repeat;
+ overflow: hidden
+}
+.recommendation{
+  background-image: url("../images/assessment.jpg");
+  position: relative;
+  height: 530px;
+ background-repeat:no-repeat;
+ overflow: hidden
+}
+.networkTesting{
+  background-image: url("../images/network.jpg");
+  position: relative;
+  height: 600px;
+ background-repeat:no-repeat;
+ overflow: hidden
+}
+
+.networkColor h5 {
+  color: #DCDCDC
+}
