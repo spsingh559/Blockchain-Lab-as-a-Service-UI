@@ -26,6 +26,7 @@ export default class InstanceDetail extends React.Component{
       <th>Nodes</th>
       <th>Creation Time</th>
       <th>Cloud</th>
+      <th>Platform</th>
       <th>Status</th>
       <th>External IP</th>
       <th>Action</th>

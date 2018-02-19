@@ -11,6 +11,10 @@ import Avatar from 'material-ui/Avatar';
 import FileFolder from 'material-ui/svg-icons/file/folder';
 import List from 'material-ui/List/List';
 import ListItem from 'material-ui/List/ListItem';
+import Badge from 'material-ui/Badge';
+import IconButton from 'material-ui/IconButton';
+import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
+import Divider from 'material-ui/Divider';
 
 
 import {Image} from 'react-bootstrap';
@@ -56,6 +60,7 @@ const style = {
 import {
   blue300,
 } from 'material-ui/styles/colors';
+// import Divider from 'material-ui/Divider/Divider';
 export default class Nav extends React.Component{
 	state={
 		openDrawer:false
@@ -104,10 +109,15 @@ export default class Nav extends React.Component{
              onLeftIconButtonTouchTap={this.handleToggle}
              style={{position: "fixed",top:'0',backgroundColor: '#1f497d'}}
             >
-           <FlatButton style={style.labelStyle1} label="Application Assement Framework" onTouchTap={this.assesmentFormNavigation} />
-           <FlatButton style={style.labelStyle} label="Create a Netwoork" onTouchTap={this.networkNavigation} />
-           <FlatButton style={style.labelStyle} label="Test a Network" onTouchTap={this.networkTestingNavigation} />
-           
+           <FlatButton style={style.labelStyle1} label="Application Assessment Framework" onTouchTap={this.assesmentFormNavigation} />
+           <FlatButton style={style.labelStyle} label="Create a Network" onTouchTap={this.networkNavigation} />
+           <FlatButton style={style.labelStyle} label="Network Performance" onTouchTap={this.networkTestingNavigation} />
+           <Badge
+      badgeContent={4}
+      primary={true}
+    >
+      <NotificationsIcon color="white"/>
+    </Badge>
            
            <List>
                 <ListItem
@@ -127,10 +137,12 @@ export default class Nav extends React.Component{
           open={this.state.openDrawer}
           onRequestChange={(openDrawer) => this.setState({openDrawer})}
           >
-
+<center>
         <Image src="../../images/profile.jpg" 
-        style={{width:'180px',height:'200px'}} circle/>
+        style={{width:'100px',height:'100px'}} circle/>
+        </center>
         <center style={{fontWeight:'bold',fontSize:16}}>John</center>
+        <Divider />
           <MenuItem onTouchTap={this.handleClose}>
            <Link to="/"> Home </Link>
           </MenuItem>
@@ -146,6 +158,7 @@ export default class Nav extends React.Component{
           <MenuItem onTouchTap={this.handleClose}>
           <Link to ="/myProfile">My Profile</Link>
           </MenuItem>
+          <Divider />
           <MenuItem onTouchTap={this.handleLogout}>
           Logout
           </MenuItem>

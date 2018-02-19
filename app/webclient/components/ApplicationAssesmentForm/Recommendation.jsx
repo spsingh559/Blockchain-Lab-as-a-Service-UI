@@ -43,20 +43,19 @@ export default class Recommendation extends React.Component{
   <li>Corda</li>
 </ol>
 <br />
-<h5>
+<h4>
 Number of nodes suggested: 4
-</h5>
+</h4>
 <br />
-<br />
-<h5>
+
+<h4>
 Cloud preference: AWS
-</h5>
+</h4>
 <br />
-<br />
-<h5>
+<h4>
 
 Estimate cost: $ 450
-</h5>
+</h4>
 <br />
 
                         </Row>

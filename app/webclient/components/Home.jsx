@@ -17,6 +17,7 @@ creationTime:"07/05/2017 07:11:05",
 cloud:"Amazon EC2",
 status:"Initializing",
 externalIP:"34.123.34.23",
+platform:"Ethereum"
 },
 {
   instanceID:"1273892731",
@@ -26,6 +27,7 @@ externalIP:"34.123.34.23",
   cloud:"Amazon EC2",
   status:"Initializing",
   externalIP:"34.123.34.23",
+  platform:"Hyperledger"
   },
   {
     instanceID:"1273892733",
@@ -35,6 +37,7 @@ externalIP:"34.123.34.23",
     cloud:"Cloud",
     status:"Initializing",
     externalIP:"34.123.34.23",
+    platform:"Quoram"
     },
 ]
 
