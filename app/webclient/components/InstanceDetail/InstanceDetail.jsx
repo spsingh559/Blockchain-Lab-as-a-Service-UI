@@ -20,7 +20,7 @@ export default class InstanceDetail extends React.Component{
         })
         return(
             <Table  bordered style={{color:"white"}}>
-  <thead>
+  <thead style={{backgroundColor:"#ffe4b2",color:"black"}}>
     <tr>
       <th>Name</th>
       <th>Nodes</th>

@@ -86,6 +86,9 @@ export default class Nav extends React.Component{
   networkTestingNavigation=()=>{
     this.context.router.push('/networkTesting');
   }
+  homeNavigation=()=>{
+    this.context.router.push('/');
+  }
   // confirmParcelNavigation=()=>{
   //   this.context.router.push("/confirmParcel");
   // }
@@ -109,6 +112,7 @@ export default class Nav extends React.Component{
              onLeftIconButtonTouchTap={this.handleToggle}
              style={{position: "fixed",top:'0',backgroundColor: '#1f497d'}}
             >
+              {/* <FlatButton style={style.labelStyle1} label="Home" onTouchTap={this.homeNavigation} /> */}
            <FlatButton style={style.labelStyle1} label="Application Assessment Framework" onTouchTap={this.assesmentFormNavigation} />
            <FlatButton style={style.labelStyle} label="Create a Network" onTouchTap={this.networkNavigation} />
            <FlatButton style={style.labelStyle} label="Network Performance" onTouchTap={this.networkTestingNavigation} />
@@ -145,6 +149,9 @@ export default class Nav extends React.Component{
         <Divider />
           <MenuItem onTouchTap={this.handleClose}>
            <Link to="/"> Home </Link>
+          </MenuItem>
+          <MenuItem onTouchTap={this.handleClose}>
+          <Link to ="/instanceInfo">Instance Information</Link>
           </MenuItem>
         	<MenuItem onTouchTap={this.handleClose}>
           <Link to ="/assesmentForm">Application Assement Framework</Link>

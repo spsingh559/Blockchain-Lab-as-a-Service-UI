@@ -1,9 +1,10 @@
 .background{
   background-image: url("../images/login.jpg");
   position: relative;
-  height: 637px;
+  height: 1000px;
  overflow: hidden;
  background-repeat: repeat;
+ color: azure
   /*background-color: GHOSTWHITE;*/
   /*opacity:0.5;*/
 

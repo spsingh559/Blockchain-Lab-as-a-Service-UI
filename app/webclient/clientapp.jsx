@@ -21,7 +21,7 @@ import MyProfile from './components/MyProfile/MyProfile';
 import ApplicationAssesmentForm from './components/ApplicationAssesmentForm/ApplicationAssesmentForm';
 import Recommendation from './components/ApplicationAssesmentForm/Recommendation';
 import NetworkTesting from './components/NetworkTesting/NetworkTesting';
-
+import InstanceInfo from './components/InstanceDetail/InstanceInfo';
 
 import {Route, Router, IndexRoute, hashHistory} from 'react-router';
 ReactDOM.render(
@@ -31,6 +31,8 @@ ReactDOM.render(
 	<Route path="/login" component={Login} />
 	
 	
+	
+	
 	<Route path="/" component={ParentComponent}>
 	<Route  path="/Report/:instanceID" component={Report}  />
 	<Route  path="/createNetwork" component={CreateNetwork}  />
@@ -38,6 +40,7 @@ ReactDOM.render(
 	<Route  path="/assesmentForm" component={ApplicationAssesmentForm}  />
 	<Route  path="/recommendation/:recommendationID" component={Recommendation}  />networkTesting
 	<Route  path="/networkTesting" component={NetworkTesting}  />
+	<Route path="/instanceInfo" component={InstanceInfo} />
 
 
 	{/* <Route path="/Report" component={Report} /> */}

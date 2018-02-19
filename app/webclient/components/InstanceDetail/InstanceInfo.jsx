@@ -7,15 +7,7 @@ import TextField from 'material-ui/TextField';
 // import {Grid} from 'react-bootstrap';
 import {Grid,Row,Col,Carousel} from 'react-bootstrap';
 
-// Component 
-import InstanceCount from './Dashboard/InstanceCount';
-import InstanceStatus from './Dashboard/InstanceStatus';
-import CloudChart from './Dashboard/CloudChart';
-import PlatFormChart from './Dashboard/PlatFormChart';
-
-// Component End
-
-
+import InstanceDetail from './InstanceDetail.jsx';
 const instanceData=[
   {
 instanceID:"1273892730",
@@ -49,39 +41,6 @@ platform:"Ethereum"
     },
 ]
 
-const style={
-  instanceCountStyle:{
-    height:"100px",
-    width:"320px",
-    borderRadius: "6px",
-    border: "solid 1px #d5d5d5",
-    align:"center"
-  },
-  instanceStatusStyle:{
-    height:"100px",
-    width:"700px",
-    marginLeft:"10px",
-    textAlign:"center"
-  },
-  CloudChartStyle:{
-    height:"650px",
-    marginTop:"50px",
-    width:"500px",
-    borderRadius: "6px",
-    border: "solid 1px #d5d5d5"
-  },
-  platFormStyle:{
-    height:"650px",
-    marginLeft:"20px",
-    marginTop:"50px",
-    width:"500px",
-    borderRadius: "6px",
-    border: "solid 1px #d5d5d5"
-  }
-}
-
-
-
 export default class Home extends React.Component {
   
   render() {
@@ -89,23 +48,24 @@ export default class Home extends React.Component {
       return (
         <div className="background">
         <Grid style={{marginTop:"90px"}}>  
-    <Row> 
-      <Col xs={4} style={style.instanceCountStyle}>
-      <InstanceCount />
+        <InstanceDetail instanceData={instanceData}/>
+            
+         
+			{/* <Row >
+			<Col xs={2}><TradePortalComponent />
       </Col>
-      <Col xs={8} style={style.instanceStatusStyle}>
-      <InstanceStatus />
+      <Col xs={7}><TradeStatusAndRecap />
       </Col>
-      </Row>
+      <Col xs={3}><Notification />
+      </Col>
+			</Row>
       <Row>
-      <Col xs={6} style={style.CloudChartStyle}>
-      <CloudChart />
-      </Col>
-      <Col xs={6} style={style.platFormStyle}>
-      <PlatFormChart />
-      </Col>
-
-      </Row>
+        <Col xs={6}> <ParcelStatusComponent />
+        </Col>
+        <Col xs={6}> <TradeSummaryPublished />
+        </Col>
+        </Row>        
+           */}
            
           </Grid>
           </div>
