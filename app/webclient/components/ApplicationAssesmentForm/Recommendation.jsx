@@ -39,7 +39,7 @@ export default class Recommendation extends React.Component{
                     <Row>
                     Platform preference: <ol>
   <li>Hyperledger</li>
-  <li>Etherium</li>
+  <li>Ethereum</li>
   <li>Corda</li>
 </ol>
 <br />

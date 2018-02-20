@@ -10,10 +10,19 @@ const data = [
   ]
 
 export default class PlatFormChart extends React.Component{
+    static get contextTypes() {
+        return {
+          router: React.PropTypes.object.isRequired
+        }
+      }
+
+    navigateInstanceInfo=()=>{
+        this.context.router.push('/instanceInfo');
+    }
 
     render(){
         return(
-            <div >
+            <div onTouchTap={this.navigateInstanceInfo}>
                <center><h3>Platform Wise Instance Detail </h3></center>
                <br />
                <ReactSvgPieChart
