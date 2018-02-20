@@ -78,7 +78,7 @@ export default class Nav extends React.Component{
   //   this.context.router.push('/newTrade');
   // }
   assesmentFormNavigation=()=>{
-    this.context.router.push('/assesmentForm');
+    this.context.router.push('/applicationAssessmentDashboard');
   }
   networkNavigation=()=>{
     this.context.router.push('/createNetwork');
@@ -154,7 +154,7 @@ export default class Nav extends React.Component{
           <Link to ="/instanceInfo">Instance Information</Link>
           </MenuItem>
         	<MenuItem onTouchTap={this.handleClose}>
-          <Link to ="/assesmentForm">Application Assement Framework</Link>
+          <Link to ="/applicationAssessmentDashboard">Application Assement Framework</Link>
           </MenuItem>
           <MenuItem onTouchTap={this.handleClose}>
           <Link to ="/createNetwork">Create a Netwoork</Link>

@@ -13,7 +13,8 @@ export default class createNetwork extends React.Component{
         cloudDrpDwn:"",
         instanceName:"",
         numberOfNodes:0,
-        estimatedBudget:0
+        estimatedBudget:0,
+        Difficulty:0
 
       };
 
@@ -22,6 +23,7 @@ export default class createNetwork extends React.Component{
       handleChangeinstanceName= (event) => this.setState({instanceName:event.target.value});
       handleChangenumberOfNodes=(e)=>this.setState({numberOfNodes:e.target.value})
       handleChangeestimatedBudget=(e)=>this.setState({estimatedBudget:e.target.value})
+      handleChangeDifficulty=(e)=>this.setState({Difficulty:e.target.value})
       
 
 
@@ -49,6 +51,267 @@ export default class createNetwork extends React.Component{
       }
      
     render(){
+      let platformInfo;
+      if(this.state.platformDrpDwn=="Ethereum"){
+        platformInfo=[
+          <div>
+          <Row>
+        <Col xs={4}>
+        Number of Nodes
+        </Col>
+        <Col xs={4}>
+        <TextField
+      floatingLabelText="Number of Nodes"
+      type="number"
+      floatingLabelFixed={true}
+      fullWidth={true}
+      inputStyle={{color:"white",fontSize:"20px"}}
+      floatingLabelStyle={{color:"white",fontSize:"20px"}}
+      onChange={this.handleChangenumberOfNodes}
+      value={this.state.numberOfNodes}
+    />
+        </Col>
+        </Row>
+
+        <Row>
+        <Col xs={4}>
+        Number of Miners
+        </Col>
+        <Col xs={4}>
+        <TextField
+      floatingLabelText="Number of miners"
+      type="number"
+      floatingLabelFixed={true}
+      fullWidth={true}
+      inputStyle={{color:"white",fontSize:"20px"}}
+      floatingLabelStyle={{color:"white",fontSize:"20px"}}
+      onChange={this.handleChangeestimatedBudget}
+      value={this.state.estimatedBudget}
+    />
+        </Col>
+        </Row>
+
+        <Row>
+        <Col xs={4}>
+        Difficultly Level
+        </Col>
+        <Col xs={4}>
+        <TextField
+      floatingLabelText="difficultly level "
+      type="number"
+      floatingLabelFixed={true}
+      fullWidth={true}
+      inputStyle={{color:"white",fontSize:"20px"}}
+      floatingLabelStyle={{color:"white",fontSize:"20px"}}
+      onChange={this.handleChangeDifficulty}
+      value={this.state.Difficulty}
+    />
+        </Col>
+        </Row>
+        </div>
+
+        ]}
+        else if(this.state.platformDrpDwn=="Hyperledger" ){
+         
+          platformInfo=[
+            <div>
+            <Row>
+          <Col xs={4}>
+          Number of organizations
+          </Col>
+          <Col xs={4}>
+          <TextField
+        floatingLabelText="Number of organization        "
+        type="number"
+        floatingLabelFixed={true}
+        fullWidth={true}
+        inputStyle={{color:"white",fontSize:"20px"}}
+        floatingLabelStyle={{color:"white",fontSize:"20px"}}
+        onChange={this.handleChangenumberOfNodes}
+        value={this.state.numberOfNodes}
+      />
+          </Col>
+          </Row>
+  
+          <Row>
+          <Col xs={4}>
+          Number of peers and CA nodes in each organization
+          </Col>
+          <Col xs={4}>
+          <TextField
+        floatingLabelText="Number of peers and CA nodes in each organization"
+        type="number"
+        floatingLabelFixed={true}
+        fullWidth={true}
+        inputStyle={{color:"white",fontSize:"20px"}}
+        floatingLabelStyle={{color:"white",fontSize:"20px"}}
+        onChange={this.handleChangeestimatedBudget}
+        value={this.state.estimatedBudget}
+      />
+          </Col>
+          </Row>
+  
+          <Row>
+          <Col xs={4}>
+          Number of orderer nodes
+          </Col>
+          <Col xs={4}>
+          <TextField
+        floatingLabelText="Number of orderer nodes"
+        type="number"
+        floatingLabelFixed={true}
+        fullWidth={true}
+        inputStyle={{color:"white",fontSize:"20px"}}
+        floatingLabelStyle={{color:"white",fontSize:"20px"}}
+        onChange={this.handleChangeDifficulty}
+        value={this.state.Difficulty}
+      />
+          </Col>
+          </Row>
+
+          <Row>
+          <Col xs={4}>
+          Number of channels
+          </Col>
+          <Col xs={4}>
+          <TextField
+        floatingLabelText="Number of channels"
+        type="number"
+        floatingLabelFixed={true}
+        fullWidth={true}
+        inputStyle={{color:"white",fontSize:"20px"}}
+        floatingLabelStyle={{color:"white",fontSize:"20px"}}
+        onChange={this.handleChangeDifficulty}
+        value={this.state.Difficulty}
+      />
+          </Col>
+          </Row>
+          
+          </div>]
+  
+        }else if(this.state.platformDrpDwn=="Quoram"){
+         
+          platformInfo=[
+            <div>
+            <Row>
+          <Col xs={4}>
+          Number of Nodes
+          </Col>
+          <Col xs={4}>
+          <TextField
+        floatingLabelText="Number of Nodes"
+        type="number"
+        floatingLabelFixed={true}
+        fullWidth={true}
+        inputStyle={{color:"white",fontSize:"20px"}}
+        floatingLabelStyle={{color:"white",fontSize:"20px"}}
+        onChange={this.handleChangenumberOfNodes}
+        value={this.state.numberOfNodes}
+      />
+          </Col>
+          </Row>
+  
+          <Row>
+          <Col xs={4}>
+          Consensus algorithm (RAFT or BFT)
+          </Col>
+          <Col xs={4}>
+          <TextField
+        floatingLabelText="Number of miners"
+        type="number"
+        floatingLabelFixed={true}
+        fullWidth={true}
+        inputStyle={{color:"white",fontSize:"20px"}}
+        floatingLabelStyle={{color:"white",fontSize:"20px"}}
+        onChange={this.handleChangeestimatedBudget}
+        value={this.state.estimatedBudget}
+      />
+          </Col>
+          </Row>
+  
+          <Row>
+          <Col xs={4}>
+          Queue threshold limit
+          </Col>
+          <Col xs={4}>
+          <TextField
+        floatingLabelText="difficultly level "
+        type="number"
+        floatingLabelFixed={true}
+        fullWidth={true}
+        inputStyle={{color:"white",fontSize:"20px"}}
+        floatingLabelStyle={{color:"white",fontSize:"20px"}}
+        onChange={this.handleChangeDifficulty}
+        value={this.state.Difficulty}
+      />
+          </Col>
+          </Row>
+          </div>
+  
+          ]}else if(this.state.platformDrpDwn=="Corda"){
+            platformInfo=[
+              <div>
+              <Row>
+            <Col xs={4}>
+            Number of Nodes
+            </Col>
+            <Col xs={4}>
+            <TextField
+          floatingLabelText="Number of Nodes"
+          type="number"
+          floatingLabelFixed={true}
+          fullWidth={true}
+          inputStyle={{color:"white",fontSize:"20px"}}
+          floatingLabelStyle={{color:"white",fontSize:"20px"}}
+          onChange={this.handleChangenumberOfNodes}
+          value={this.state.numberOfNodes}
+        />
+            </Col>
+            </Row>
+    
+            <Row>
+            <Col xs={4}>
+            Name of Node
+            </Col>
+            <Col xs={4}>
+            <TextField
+          floatingLabelText=" Name of Node"
+          type="number"
+          floatingLabelFixed={true}
+          fullWidth={true}
+          inputStyle={{color:"white",fontSize:"20px"}}
+          floatingLabelStyle={{color:"white",fontSize:"20px"}}
+          onChange={this.handleChangeestimatedBudget}
+          value={this.state.estimatedBudget}
+        />
+            </Col>
+            </Row>
+    
+            <Row>
+            <Col xs={4}>
+            Node – Role mapping (Notay, Issuer, Participant)
+
+            </Col>
+            <Col xs={4}>
+            <TextField
+          floatingLabelText="  Node – Role mapping (Notary, Issuer, Participant)  "
+          type="number"
+          floatingLabelFixed={true}
+          fullWidth={true}
+          inputStyle={{color:"white",fontSize:"20px"}}
+          floatingLabelStyle={{color:"white",fontSize:"20px"}}
+          onChange={this.handleChangeDifficulty}
+          value={this.state.Difficulty}
+        />
+            </Col>
+            </Row>
+            </div>
+    
+            ]
+          }
+
+        
+    
         return(
             <div  style={{marginTop:"65px"}}>
             <Grid>
@@ -71,7 +334,7 @@ export default class createNetwork extends React.Component{
       fullWidth={true}
       labelStyle={{color:"white"}}
     >
-      <MenuItem value="Etherium" primaryText="Etherium" />
+      <MenuItem value="Ethereum" primaryText="Ethereum" />
       <MenuItem value="Hyperledger" primaryText="Hyperledger" />
       <MenuItem value="Quoram" primaryText="Quoram" />
       <MenuItem value="Corda" primaryText="Corda" />
@@ -117,42 +380,8 @@ export default class createNetwork extends React.Component{
         <RaisedButton label="Submit" primary={true} onTouchTap={this.submitCreateNetwork} />
         </Col>
         </Row>
-
-        <Row>
-        <Col xs={4}>
-        Number of Nodes
-        </Col>
-        <Col xs={4}>
-        <TextField
-      floatingLabelText="Number of Nodes"
-      type="number"
-      floatingLabelFixed={true}
-      fullWidth={true}
-      inputStyle={{color:"white",fontSize:"20px"}}
-      floatingLabelStyle={{color:"white",fontSize:"20px"}}
-      onChange={this.handleChangenumberOfNodes}
-      value={this.state.numberOfNodes}
-    />
-        </Col>
-        </Row>
-
-        <Row>
-        <Col xs={4}>
-        Planned Budget
-        </Col>
-        <Col xs={4}>
-        <TextField
-      floatingLabelText="Estimated Budget in $"
-      type="number"
-      floatingLabelFixed={true}
-      fullWidth={true}
-      inputStyle={{color:"white",fontSize:"20px"}}
-      floatingLabelStyle={{color:"white",fontSize:"20px"}}
-      onChange={this.handleChangeestimatedBudget}
-      value={this.state.estimatedBudget}
-    />
-        </Col>
-        </Row>
+{platformInfo}
+        
 
         
         </center>

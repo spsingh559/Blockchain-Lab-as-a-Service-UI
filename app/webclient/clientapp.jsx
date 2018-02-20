@@ -22,6 +22,7 @@ import ApplicationAssesmentForm from './components/ApplicationAssesmentForm/Appl
 import Recommendation from './components/ApplicationAssesmentForm/Recommendation';
 import NetworkTesting from './components/NetworkTesting/NetworkTesting';
 import InstanceInfo from './components/InstanceDetail/InstanceInfo';
+import ApplicationAssessmentDashboard from './components/ApplicationAssesmentForm/ApplicationAssessmentDashboard';
 
 import {Route, Router, IndexRoute, hashHistory} from 'react-router';
 ReactDOM.render(
@@ -41,6 +42,7 @@ ReactDOM.render(
 	<Route  path="/recommendation/:recommendationID" component={Recommendation}  />networkTesting
 	<Route  path="/networkTesting" component={NetworkTesting}  />
 	<Route path="/instanceInfo" component={InstanceInfo} />
+	<Route path="/applicationAssessmentDashboard" component={ApplicationAssessmentDashboard} />
 
 
 	{/* <Route path="/Report" component={Report} /> */}
