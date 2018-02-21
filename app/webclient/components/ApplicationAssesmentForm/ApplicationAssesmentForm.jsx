@@ -9,7 +9,7 @@ import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import {Link} from 'react-router';
-
+import axios,{post} from 'axios';
 
 
 const style={
@@ -34,14 +34,59 @@ const style={
 
 export default class ApplicationAssesmentForm extends React.Component{
 
-    state={
-        nwPermissionDrpDwn:"",
+ 
+ 
+
+constructor(props) {
+super(props);
+
+this.onFormSubmit = this.onFormSubmit.bind(this)
+this.onChangeFile = this.onChangeFile.bind(this)
+this.fileUpload = this.fileUpload.bind(this)
+
+this.state = {
+file: null,
+nwPermissionDrpDwn:"",
         nwTypeDrpDwn:"",
         industryDrpDwn:"",
         applicationTypeDrpDwn:"",
         ReportingDrpDwn:""
+};
 
-    }
+}
+
+
+onChangeFile(e) {
+console.log(e.target.files[0]);
+this.setState({ file: e.target.files[0] });
+}
+
+onFormSubmit(e) {
+e.preventDefault() // Stop form submit
+this.fileUpload(this.state.file).then((response) => {
+alert('File is uploaded to server');
+// console.log(response.data);
+})
+}
+
+
+fileUpload(file) {
+const url = '/StoreFile';
+const formData = new FormData();
+formData.append('file', file)
+const config = {
+headers: {
+'content-type': 'multipart/form-data'
+}
+}
+console.log('File reached to button');
+console.log(file);
+return post(url, formData, config);
+} 
+ 
+
+
+   
 
     handleChangenwTypeDrpDwn = (event, index, value) => this.setState({nwTypeDrpDwn:value});
     handleChangenwPermissionDrpDwn = (event, index, value) => this.setState({nwPermissionDrpDwn:value});
@@ -427,14 +472,18 @@ export default class ApplicationAssesmentForm extends React.Component{
                             Fill and upload the Requirement excel
                             </Col>
                             <Col xs={6}>
-                            <TextField
+                            {/* <TextField
       floatingLabelText=" Fill and upload "
       floatingLabelFixed={true}
       fullWidth={true}
       inputStyle={{color:"#DCDCDC"}}
       type="file"
       floatingLabelStyle={{color:"#DCDCDC"}}
-    />
+    /> */}
+    <form onSubmit={this.onFormSubmit}>
+    <input type="file" onChange={this.onChangeFile} />
+    <button type="submit">Upload</button>
+    </form> 
                             </Col>
                             </Row>
                         </Col>

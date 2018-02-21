@@ -334,7 +334,7 @@ export default class createNetwork extends React.Component{
       fullWidth={true}
       labelStyle={{color:"white"}}
     >
-      <MenuItem value="Ethereum" primaryText="Ethereum" />
+      <MenuItem value="Ethereum " primaryText="Ethereum" />
       <MenuItem value="Hyperledger" primaryText="Hyperledger" />
       <MenuItem value="Quoram" primaryText="Quoram" />
       <MenuItem value="Corda" primaryText="Corda" />
